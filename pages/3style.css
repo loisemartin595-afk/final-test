@@ -1,0 +1,241 @@
+:root {
+    --primary-color: #4b3621;    
+    --secondary-color: #a67b5b;  
+    --accent-color: #d2b48c;      
+    --bg-color: #faf9f6;        
+    --text-color: #333333;
+    --white: #ffffff;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --input-border: #cccccc;
+    --input-focus: #a67b5b;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Main Content --- */
+main {
+    min-height: 80vh;
+}
+
+
+.form-box {
+    max-width: 600px;
+    margin: 0 auto; /* Centers the form */
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background-color: var(--white);
+    transition: var(--transition);
+}
+
+/* Focus state - when user clicks on input */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(166, 123, 91, 0.2); /* Light brown glow */
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: #999999;
+}
+
+
+select {
+    appearance: none; /* Removes default arrow */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234b3621%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+
+textarea {
+    resize: vertical; /* Allows vertical resizing only */
+    min-height: 120px;
+}
+
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* --- Contact Info Section --- */
+main > div:last-of-type {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f0ebe5;
+    border-radius: 8px;
+}
+
+main > div:last-of-type p {
+    margin-bottom: 8px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+/* --- Responsive Design (Media Query) --- */
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Form Box Responsive */
+    .form-box {
+        padding: 25px;
+        margin: 0 15px; /* Add side margin on mobile */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}

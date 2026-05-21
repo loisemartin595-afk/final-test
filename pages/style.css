@@ -1,0 +1,182 @@
+:root {
+    --primary-color: #4b3621;   
+    --secondary-color: #a67b5b; 
+    --accent-color: #d2b48c;    
+    --bg-color: #faf9f6;       
+    --text-color: #333333;
+    --white: #ffffff;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Main Content --- */
+main {
+    min-height: 80vh; /* Ensures footer stays at bottom */
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+main h3 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- About Page Layout (Flexbox) --- */
+.about-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Wraps on mobile */
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text ul {
+    margin-left: 20px;
+    list-style-position: inside;
+}
+
+.about-text li {
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Responsive Design (Media Query) --- */
+@media (max-width: 768px) {
+    /* Change Nav to vertical column on mobile */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Stack the About section vertically */
+    .about-wrapper {
+        flex-direction: column;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+}
